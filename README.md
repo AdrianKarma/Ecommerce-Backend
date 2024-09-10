@@ -30,7 +30,7 @@ npm i
 - morgan
 - nodemon
 
-### Autors
+### Autores
 - 👨‍💻 **Alejandro Sebastian Orozco**
 - 👩‍💻 **Pablo Mariano Decima**
 - 👩‍💻 **Adrian Chanampa**
