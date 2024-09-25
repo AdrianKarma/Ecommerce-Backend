@@ -1,40 +1,44 @@
 const mongoose = require("mongoose");
 
 const BookSchema = new mongoose.Schema({
-    title: {
+    titulo: {
     type: String,
     required: true,
     trim: true,
-    minlength:[ 3, 'Minimum allowed 3 characters'],
-    maxlength:[50, 'Maximum allowed is 50 characters']
+    minlength:  [5, "El minimo de caracteres es 5"],
+    maxlength: [50, "El maximo de caracteres es 50"],
   },
-  genre: {
+  genero: {
     type: String,
     required: true,
     trim: true,
     enum: {
-        values: ['Romance', 'Fiction', 'Psychology', 'Historical', 'Adventure'],
-        message: 'Genre must be one of the following: Romance, Fiction, Psychology, Historical, Adventure'
+        values: ['romance', 'ficcion', 'psicologia', 'historia', 'aventura'],
+        message: 'El genero debe ser: Romance, Ficcion, Psicologia, Historia, Aventura'
       }
   },
-  description: {
+  descripcion: {
     type: String,
     required: true,
     trim: true,
-    minlength:[ 5, 'Minimum allowed 5 characters'],
-    maxlength:[100, 'Maximum allowed is 100 characters']
+    minlength:  [5, "El minimo de caracteres es 5"],
+    maxlength: [50, "El maximo de caracteres es 50"]
   },
-  price: {
+  precio: {
     type: Number,
     required: true,
     default: 0
   },
-  images: {
+  imagenes: {
     type: String,
     default: "",
   },
+  bloqueado:{
+    type:Boolean,
+    default:false
+}
 });
 
 
-const BookModel = mongoose.model('book', BookSchema);
+const BookModel = mongoose.model('libro', BookSchema);
 module.exports= BookModel
