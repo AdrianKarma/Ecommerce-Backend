@@ -6,7 +6,7 @@ const cors = require('cors')
 class Server {
     constructor() {
             this.app = express()
-            this.port = process.env.PORT || 8080
+            this.port = process.env.PORT || 3001
             this.middleware()
             this.routes()
         }
@@ -23,7 +23,7 @@ class Server {
 
         routes() {
             this.app.use('/api/productos', require('../routes/productos.routes'))
-            //this.app.use('/api/usuarios', require('../routes/usuarios.routes'))
+            this.app.use('/api/usuarios', require('../routes/usuarios.routes'))
         }
         listen(){
             this.app.listen(this.port, () => {
