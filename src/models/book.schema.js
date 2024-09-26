@@ -6,7 +6,7 @@ const BookSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength:  [5, "El minimo de caracteres es 5"],
-    maxlength: [50, "El maximo de caracteres es 50"],
+    maxlength: [200, "El maximo de caracteres es 200"],
   },
   genero: {
     type: String,
@@ -22,14 +22,14 @@ const BookSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength:  [5, "El minimo de caracteres es 5"],
-    maxlength: [50, "El maximo de caracteres es 50"]
+    maxlength: [200, "El maximo de caracteres es 200"]
   },
   precio: {
     type: Number,
     required: true,
     default: 0
   },
-  imagenes: {
+  imagen: {
     type: String,
     default: "",
   },
