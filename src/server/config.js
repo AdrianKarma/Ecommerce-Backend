@@ -2,6 +2,7 @@ require("../database/config");
 const express = require('express')
 const path = require('path');
 const cors = require('cors')
+const morgan = require('morgan');
 
 class Server {
     constructor() {
@@ -17,7 +18,7 @@ class Server {
             this.app.use(express.json())
             this.app.use(express.static(path.join(__dirname, 'src/public')))
             this.app.use(cors())
-            //this.app.use(morgan('dev'))
+            this.app.use(morgan('dev'))
         }
     
 
