@@ -1,12 +1,30 @@
+const serviciosDeProductos = require('../services/productos.services')
+
 const productos = []
 
-const crearProducto = (req, res) => {
+
+
+/* const crearProducto = (req, res) => {
         const producto = req.body
 
         productos.push({id: crypto.randomUUID(), producto})
         res.send('producto Creado')
-    }
+    } */
 
+const crearProducto = async(req, res)=>{
+    try {
+        const result = await serviciosDeProductos.nuevoProducto(req.body);
+        if (result.statusCode === 201) {
+            res.status(201).json({ msg: result.msg });
+          } else {
+            res.status(500).json({ msg: result.msg });
+          }
+    } catch (error) {
+        console.log('Error al agregar imagen:',error)
+        res.status(500).json({msg:'Error en el servidor'})
+    }
+    
+}
 const traerTodosLosProductos = (req, res) => {
         res.json(productos)
     }
@@ -42,7 +60,19 @@ const eliminarUnProducto = (req, res) => {
         res.json({msg: 'producto eliminado'})
     }
 
-
+    const agregarImagenProducto = async(req, res)=>{
+        try {
+            const result = await serviciosDeProductos.imagenProducto(req.params.idProducto, req.file)
+            if(result.statusCode===200){
+                return res.status(200).json({msg:result.msg});
+            }else{
+                return res.status(400).json({msg:result.msg})
+            }
+        } catch (error) {
+            console.log('Error al agregar imagen:',error)
+            res.status(500).json({msg:'Error en el servidor'})
+        }
+    }
 
     module.exports = {
         crearProducto,
@@ -50,4 +80,6 @@ const eliminarUnProducto = (req, res) => {
         traerUnProducto,
         actualizarUnProducto,
         eliminarUnProducto,
+        agregarImagenProducto
+        
     }
