@@ -4,14 +4,14 @@ const registrarUsuario = async(req, res) => {
     try {
         const resultado = await serviceUsuario.nuevoUsuario(req.body); 
         
-        if (resultado.status === 201) {
-            return res.status(201).json({ msg: resultado.msg });
+        if (resultado.statusCode === 201) {
+             res.status(201).json({ msg: resultado.msg });
         } else {
-            return res.status(resultado.status).json({ msg: resultado.msg });
+             res.status(500).json({ msg: resultado.msg });
         }
     } catch (error) {
         console.log(error);
-        return res.status(500).json({ msg: 'Error en el servidor' });
+         res.status(500).json({ msg: 'Error en el servidor' });
     }
 };
 
