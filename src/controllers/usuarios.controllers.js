@@ -1,8 +1,8 @@
 const serviceUsuario = require('../services/usuarios.services');
 
-const registrarUsuario = (req, res) => {
+const registrarUsuario = async(req, res) => {
     try {
-        const resultado = serviceUsuario.nuevoUsuario(req.body); 
+        const resultado = await serviceUsuario.nuevoUsuario(req.body); 
         
         if (resultado.status === 201) {
             return res.status(201).json({ msg: resultado.msg });
@@ -14,6 +14,20 @@ const registrarUsuario = (req, res) => {
         return res.status(500).json({ msg: 'Error en el servidor' });
     }
 };
+
+const iniciarSesionUsuario = async(req, res) => {
+    try {
+        const result = await serviceUsuario.inicioSesion(req.body)
+
+        if(result === 400){
+            res.status(400).json({msg:'usuario o contraseña incorrecto'})
+        }else {
+            res.status(200).json({msg:'usuario logueado'})
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 const obtenerTodosLosUsuarios = (req, res) => {
     try {
@@ -63,6 +77,7 @@ const bajaLogicaUsuario = (req, res) => {
 
 module.exports = {
     registrarUsuario,
+    iniciarSesionUsuario,
     obtenerTodosLosUsuarios,
     obtenerUnUsuario,
     bajaFisicaUsuario,

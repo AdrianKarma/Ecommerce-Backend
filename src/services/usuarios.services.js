@@ -1,17 +1,32 @@
 const crypto = require('crypto'); // Asegúrate de importar crypto si no lo has hecho
+const UserModel = require('../models/user.schema');
+const bcrypt = require('bcrypt')
 
-const usuarios = [
+/*const usuarios = [
     {
         id: 1,
         nombreDeUsuario: 'adrian2024',
         emailDelUsuario: 'adrian@gmail.com',
         contrasenia: '123456789'
     }
-];
+];*/
 
-const nuevoUsuario = (body) => {
+const nuevoUsuario = async (body) => {
     try {
-        const emailExiste = usuarios.find((usuario) => usuario.emailDelUsuario === body.emailDelUsuario);
+        const usuarioExiste = await UserModel.findOne({nombreUsuario: body.nombreUsuario})
+
+        if(usuarioExiste){
+            return 400
+        }
+        
+        let salt = bcrypt.genSaltSync();
+        body.contrasenia = bcrypt.hashSync(body.contrasenia, salt)
+        const usuario = new UserModel(body)
+        await usuario.save()
+
+        return 201
+
+        /*const emailExiste = usuarios.find((usuario) => usuario.emailDelUsuario === body.emailDelUsuario);
         const usuarioExiste = usuarios.find((usuario) => usuario.nombreDeUsuario === body.nombreDeUsuario);
     
         if (emailExiste) {
@@ -22,12 +37,35 @@ const nuevoUsuario = (body) => {
 
         const id = crypto.randomUUID();
         usuarios.push({ id, bloqueado: false, ...body });
-        return { status: 201, msg: 'Usuario creado exitosamente' }; 
+        return { status: 201, msg: 'Usuario creado exitosamente' }; */
     } catch (error) {
         console.log(error);
         return { status: 500, msg: 'Error interno del servidor' }; 
     }
 };
+
+const inicioSesion = async(body) => {
+    try {
+        const usuarioExiste = await UserModel.findOne({nombreUsuario: body.nombreUsuario})
+
+        if(!usuarioExiste){
+            return 400
+        }
+
+        const verificarContrasenia = bcrypt.compareSync(body.contrasenia, usuarioExiste.contrasenia)
+
+        if(verificarContrasenia){
+            return 200
+        }else {
+            return 400
+        }
+
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 const obtenerTodosLosUsuarios = () => {
     try {
@@ -75,6 +113,7 @@ const bajaUsuarioLogica = (idUsuario) => {
 
 module.exports = {
     nuevoUsuario,
+    inicioSesion,
     obtenerTodosLosUsuarios,
     obtenerUnUsuario,
     bajaUsuarioFisica,
