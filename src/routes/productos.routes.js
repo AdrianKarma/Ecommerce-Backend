@@ -7,7 +7,7 @@ const router = express.Router()
 router.post('/', crearProducto)
 router.get('/', traerTodosLosProductos)
 router.get('/:idProducto', traerUnProducto)
-router.put('/:idProductos', actualizarUnProducto)
+router.put('/:idProducto', actualizarUnProducto)
 router.delete('/:idProducto', eliminarUnProducto)
 router.post('/agregarImagen/:idProducto', multer.single('imagen'),agregarImagenProducto)
 
