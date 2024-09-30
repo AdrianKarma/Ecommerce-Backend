@@ -10,13 +10,15 @@ const bcrypt = require('bcrypt')
         contrasenia: '123456789'
     }
 ];*/
-
 const nuevoUsuario = async (body) => {
     try {
         const usuarioExiste = await UserModel.findOne({nombreUsuario: body.nombreUsuario})
 
         if(usuarioExiste){
-            return 400
+            return {
+                msg: 'El usuario ya está registrado',
+                statusCode: 400
+            }
         }
         
         let salt = bcrypt.genSaltSync();
@@ -24,7 +26,10 @@ const nuevoUsuario = async (body) => {
         const usuario = new UserModel(body)
         await usuario.save()
 
-        return 201
+        return {
+            msg: 'Usuario creado con exito',
+            statusCode:201
+        }
 
         /*const emailExiste = usuarios.find((usuario) => usuario.emailDelUsuario === body.emailDelUsuario);
         const usuarioExiste = usuarios.find((usuario) => usuario.nombreDeUsuario === body.nombreDeUsuario);
@@ -40,7 +45,9 @@ const nuevoUsuario = async (body) => {
         return { status: 201, msg: 'Usuario creado exitosamente' }; */
     } catch (error) {
         console.log(error);
-        return { status: 500, msg: 'Error interno del servidor' }; 
+        return { statusCode: 500,
+             msg: 'Error interno del servidor' ,
+            error}; 
     }
 };
 
