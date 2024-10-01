@@ -29,6 +29,7 @@ npm i
 - mongoose
 - morgan
 - nodemon
+- log4js 
 
 ### Autores
 - 👨‍💻 **Alejandro Sebastian Orozco**
