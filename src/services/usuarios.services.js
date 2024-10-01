@@ -1,4 +1,5 @@
 const crypto = require('crypto'); // Asegúrate de importar crypto si no lo has hecho
+const { registroUsuario } = require('../helpers/mensajes');
 
 const usuarios = [
     {
@@ -27,6 +28,8 @@ const nuevoUsuario = (body) => {
         console.log(error);
         return { status: 500, msg: 'Error interno del servidor' }; 
     }
+
+    registroUsuario()
 };
 
 const obtenerTodosLosUsuarios = () => {
