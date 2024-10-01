@@ -1,15 +1,8 @@
-const crypto = require("crypto"); // Asegúrate de importar crypto si no lo has hecho
+const crypto = require("crypto");
 const UserModel = require("../models/user.schema");
 const bcrypt = require("bcrypt");
+const logger = require("../../log4js-config");
 
-/*const usuarios = [
-    {
-        id: 1,
-        nombreDeUsuario: 'adrian2024',
-        emailDelUsuario: 'adrian@gmail.com',
-        contrasenia: '123456789'
-    }
-];*/
 const nuevoUsuario = async (body) => {
   try {
     const usuarioExiste = await UserModel.findOne({
@@ -17,36 +10,27 @@ const nuevoUsuario = async (body) => {
     });
 
     if (usuarioExiste) {
+      logger.warn(`El Usuario ya está registrado`);
+
       return {
         msg: "El usuario ya está registrado",
         statusCode: 400,
       };
     }
+    const salt = await bcrypt.genSalt();
+    body.contrasenia = await bcrypt.hash(body.contrasenia, salt);
+    
 
-    let salt = bcrypt.genSaltSync();
-    body.contrasenia = bcrypt.hashSync(body.contrasenia, salt);
     const usuario = new UserModel(body);
     await usuario.save();
+    logger.info(`Usuario registrado con éxito`);
 
     return {
       msg: "Usuario creado con exito",
       statusCode: 201,
     };
-
-    /*const emailExiste = usuarios.find((usuario) => usuario.emailDelUsuario === body.emailDelUsuario);
-        const usuarioExiste = usuarios.find((usuario) => usuario.nombreDeUsuario === body.nombreDeUsuario);
-    
-        if (emailExiste) {
-            return { status: 400, msg: 'email no disponible' }; 
-        } else if (usuarioExiste) {
-            return { status: 400, msg: 'usuario no disponible' }; 
-        }
-
-        const id = crypto.randomUUID();
-        usuarios.push({ id, bloqueado: false, ...body });
-        return { status: 201, msg: 'Usuario creado exitosamente' }; */
   } catch (error) {
-    console.log(error);
+    logger.error(`Error al crear Usuario: ${error.message}`);
     return { statusCode: 500, msg: "Error interno del servidor", error };
   }
 };
@@ -58,6 +42,8 @@ const inicioSesion = async (body) => {
     });
 
     if (!usuarioExiste) {
+      logger.warn(`El Usuario no existe`);
+
       return {
         msg: "El usuario no existe",
         statusCode: 400,
@@ -70,32 +56,38 @@ const inicioSesion = async (body) => {
     );
 
     if (verificarContrasenia) {
+      logger.info(`Inicio de sesión con éxito`);
+
       return {
         msg: "Inicio de sesión con éxito",
         statusCode: 201,
       };
     } else {
+      logger.warn(`Inicio de sesión incorrecto`);
+
       return {
         msg: "Inicio de sesión incorrecto",
         statusCode: 400,
       };
     }
   } catch (error) {
-    console.log(error);
-    return res.status(500).json({ msg: "Error interno del servidor" });
+    logger.error(`Error al Iniciar Sesion: ${error.message}`);
+    return { statusCode: 500, msg: "Error interno del servidor", error };
   }
 };
 
 const obtenerTodosLosUsuarios = async (body) => {
   try {
     const usuarios = await UserModel.find();
+    logger.info(`Se obtuvieron todos los Usuarios correctamente`);
+
     return {
       usuarios,
       statusCode: 200,
     };
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ msg: "Error interno del servidor" });
+  }  catch (error) {
+    logger.error(`Error al obtener los Usuarios: ${error.message}`);
+    return { statusCode: 500, msg: "Error interno del servidor", error }; 
   }
 };
 
@@ -103,14 +95,20 @@ const obtenerUnUsuario = async (idUsuario) => {
   try {
     const usuario = await UserModel.findById(idUsuario);
     if (usuario) {
+      logger.info(`Se obtuvo un Usuario por ID correctamente`);
+
       return {
         usuario,
         statusCode: 200,
       };
     } else {
+      logger.warn(`No se pudo obtener un Usuario por ID correctamente`);
+
       return { statusCode: 404, msg: "Usuario no encontrado" };
     }
   } catch (error) {
+    logger.error(`Error al obtener Usuario: ${error.message}`);
+
     return {
       msg: "Error al obtener usuario",
       statusCode: 500,
@@ -119,34 +117,26 @@ const obtenerUnUsuario = async (idUsuario) => {
   }
 };
 
-/* const bajaUsuarioFisica = (idUsuario) => {
-  const posicionDeUsuario = usuarios.findIndex(
-    (usuario) => usuario.id === idUsuario
-  );
-  if (posicionDeUsuario !== -1) {
-    usuarios.splice(posicionDeUsuario, 1);
-    return { status: 200, msg: "Usuario borrado con éxito" };
-  } else {
-    return { status: 404, msg: "Usuario no encontrado" };
-  }
-};
- */
 const bajaUsuarioFisica = async (idUsuario) => {
   try {
     const usuarioEliminado = await UserModel.findByIdAndDelete(idUsuario);
     if (usuarioEliminado) {
+      logger.info(`Usuario eliminado con éxito`);
+
       return {
         statusCode: 200,
         msg: "Usuario eliminado con éxito",
       };
     } else {
+      logger.warn(`No se pudo eliminar el Usuario`);
+
       return {
         statusCode: 404,
         msg: "Usuario no encontrado",
       };
     }
   } catch (error) {
-    console.log(error);
+    logger.error(`Error al eliminar Usuario: ${error.message}`);
     return {
       statusCode: 500,
       msg: "Error interno del servidor",
@@ -154,20 +144,6 @@ const bajaUsuarioFisica = async (idUsuario) => {
     };
   }
 };
-/* const bajaUsuarioLogica = (idUsuario) => {
-  const posicionDelUsuario = usuarios.findIndex(
-    (usuario) => usuario.id === idUsuario
-  );
-  if (posicionDelUsuario !== -1) {
-    usuarios[posicionDelUsuario].baja = !usuarios[posicionDelUsuario].baja;
-    const mensaje = usuarios[posicionDelUsuario].baja
-      ? "usuario bloqueado"
-      : "usuario activo";
-    return { status: 200, msg: mensaje };
-  } else {
-    return { status: 404, msg: "Usuario no encontrado" };
-  }
-}; */
 
 const bajaUsuarioLogica = async (idUsuario) => {
   try {
@@ -175,29 +151,39 @@ const bajaUsuarioLogica = async (idUsuario) => {
     if (usuario) {
       usuario.bloqueado = !usuario.bloqueado;
       await usuario.save();
+
       const mensaje = usuario.bloqueado
         ? "Usuario bloqueado"
         : "Usuario desbloqueado";
+      const accion = usuario.bloqueado ? "bloqueado" : "desbloqueado";
+
+      logger.info(
+        `El Usuario con ID: ${idUsuario} ha sido ${accion} correctamente`
+      );
+
       return {
         statusCode: 200,
         msg: mensaje,
+        accion: accion,
       };
     } else {
+      logger.warn(`No se encontró el Usuario con ID: ${idUsuario}`);
       return {
         statusCode: 404,
         msg: "Usuario no encontrado",
       };
     }
   } catch (error) {
-    console.log(error);
+    logger.error(
+      `Error al realizar la baja lógica para el Usuario con ID: ${idUsuario}: ${error.message}`
+    ); // Log de error en caso de excepción
     return {
-        statusCode: 500,
+      statusCode: 500,
       msg: "Error interno del servidor",
       error,
     };
   }
 };
-
 module.exports = {
   nuevoUsuario,
   inicioSesion,

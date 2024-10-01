@@ -3,7 +3,7 @@ const express = require('express')
 const path = require('path');
 const cors = require('cors')
 const morgan = require('morgan');
-
+const logger = require('../../log4js-config'); 
 class Server {
     constructor() {
             this.app = express()
@@ -23,14 +23,14 @@ class Server {
     
 
         routes() {
-            this.app.use('/api/productos', require('../routes/productos.routes'))
-            this.app.use('/api/usuarios', require('../routes/usuarios.routes'))
+
+            this.app.use('/api', require('../routes/index.routes'))
         }
-        listen(){
+        listen() {
             this.app.listen(this.port, () => {
-                console.log('server listo', this.port);
-            })
-        }
+              logger.info(`Servidor escuchando en el puerto ${this.port}`);
+            });
+          }
     }
 
 
