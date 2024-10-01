@@ -23,8 +23,8 @@ class Server {
     
 
         routes() {
-            this.app.use('/api/productos', require('../routes/productos.routes'))
-            this.app.use('/api/usuarios', require('../routes/usuarios.routes'))
+
+            this.app.use('/api', require('../routes/index.routes'))
         }
         listen() {
             this.app.listen(this.port, () => {

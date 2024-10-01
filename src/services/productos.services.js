@@ -24,13 +24,13 @@ const nuevoProducto = async (body) => {
 const todoLosProductos = async (body) => {
   try {
     const libros = await ProductModel.find();
-    logger.info("Se han traído todos los libros");
+    logger.info("Se han traído todos los productos");
     return {
       libros,
       statusCode: 200,
     };
   } catch (error) {
-    logger.error("Error al obtener los libros:", error);
+    logger.error("Error al obtener los productos:", error);
     return res.status(500).json({ msg: "Error interno del servidor" });
   }
 };
