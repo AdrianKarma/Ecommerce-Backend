@@ -1,0 +1,353 @@
+[2024-09-30T19:58:49.484] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:00:03.878] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:00:13.980] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:00:24.868] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:00:34.039] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:00:38.650] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:00:40.210] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:01:02.890] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:01:04.782] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:01:23.662] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:01:41.012] [INFO] default - Producto creado: {"titulo":"probando logs","genero":"romance","descripcion":"La historia de un amor que no ha sido correspondido por medio siglo.","precio":"22.500"}
+[2024-09-30T20:02:15.028] [INFO] default - Producto creado: {"titulo":"probando logs","genero":"romance","descripcion":"La historia de un amor que no ha sido correspondido por medio siglo.","precio":"22.500"}
+[2024-09-30T20:02:31.037] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:02:48.833] [INFO] default - Producto creado: {"titulo":"probando logs","genero":"romance","descripcion":"La historia de un amor que no ha sido correspondido por medio siglo.lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll","precio":"22.500"}
+[2024-09-30T20:02:55.626] [ERROR] default - Error al crear producto: Error al crear el producto
+[2024-09-30T20:03:38.229] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:04:28.044] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:04:30.094] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:04:34.371] [INFO] default - Se han traído todos los libros
+[2024-09-30T20:04:53.638] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:06:03.248] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:06:18.778] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:06:34.417] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:06:41.377] [INFO] default - Se han traído todos los libros
+[2024-09-30T20:08:05.112] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:08:14.122] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:08:17.581] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:08:33.039] [INFO] default - Se han traído todos los productos
+[2024-09-30T20:08:33.041] [INFO] default - Se han traído todos los libros
+[2024-09-30T20:08:42.877] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:08:45.775] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:08:48.164] [INFO] default - Se han traído todos los libros
+[2024-09-30T20:08:48.166] [INFO] default - Se han traído todos los libros
+[2024-09-30T20:09:36.414] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:09:44.178] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:10:36.499] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:10:38.264] [INFO] default - Conectado a MongoDB
+[2024-09-30T20:11:15.817] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:11:16.522] [INFO] default - Conectado a MongoDB
+[2024-09-30T20:11:25.149] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:11:26.681] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:11:31.608] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:11:32.308] [INFO] default - Conectado a MongoDB
+[2024-09-30T20:11:34.911] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-09-30T20:11:35.615] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:27:20.906] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:27:21.840] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:27:26.365] [INFO] default - Se han traído todos los libros
+[2024-10-01T11:27:26.365] [INFO] default - Se han traído todos los productos
+[2024-10-01T11:27:35.689] [WARN] default - Producto no encontrado: 66fb1bbac02d4c4b8a018f44
+[2024-10-01T11:27:35.691] [ERROR] default - Error interno del servidor: error is not defined
+[2024-10-01T11:27:46.933] [INFO] default - Se han traído todos los libros
+[2024-10-01T11:27:46.934] [INFO] default - Se han traído todos los productos
+[2024-10-01T11:27:54.229] [INFO] default - Producto encontrado: 66f56f01eac0462f8b55a669
+[2024-10-01T11:27:54.231] [INFO] default - Se ha obtenido un producto por ID
+[2024-10-01T11:28:01.565] [INFO] default - Se han traído todos los libros
+[2024-10-01T11:28:01.566] [INFO] default - Se han traído todos los productos
+[2024-10-01T11:28:15.741] [INFO] default - Nuevo producto guardado: {"titulo":"probando logs1","genero":"romance","descripcion":"La historia de un amor que no ha sido correspondido por medio siglo.","precio":"22.500"}
+[2024-10-01T11:28:15.743] [INFO] default - Producto creado: {"titulo":"probando logs1","genero":"romance","descripcion":"La historia de un amor que no ha sido correspondido por medio siglo.","precio":"22.500"}
+[2024-10-01T11:28:38.907] [INFO] default - Producto actualizado: 66fb2e18b9e745d2387462b3
+[2024-10-01T11:28:38.908] [INFO] default - Se actualizo el producto correctamente
+[2024-10-01T11:29:07.820] [WARN] default - Producto no encontrado: 66fb1bbac02d4c4b8a018f44
+[2024-10-01T11:29:07.822] [ERROR] default - No se pudo agregar img al producto correctamente: Producto no encontrado
+[2024-10-01T11:29:35.870] [INFO] default - Imagen guardada para el producto: 66f56f01eac0462f8b55a669
+[2024-10-01T11:29:35.942] [INFO] default - Se agregó imagen al producto correctamente
+[2024-10-01T11:29:47.065] [INFO] default - Producto eliminado: 66f56f01eac0462f8b55a669
+[2024-10-01T11:29:47.066] [INFO] default - Se eliminó correctamente el producto
+[2024-10-01T11:38:28.622] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:38:29.347] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:38:43.512] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:38:44.167] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:38:49.604] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:38:50.269] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:38:53.804] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:38:54.481] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:00.450] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:01.100] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:09.102] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:09.780] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:16.324] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:16.977] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:22.115] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:22.805] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:28.328] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:29.039] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:34.210] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:34.954] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:38.511] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:39.142] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:41.287] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:41.934] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:39:52.222] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:39:52.902] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:00.971] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:01.675] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:04.269] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:05.558] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:06.218] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:11.682] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:12.329] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:19.190] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:20.851] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:26.235] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:26.907] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:34.676] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:35.416] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:37.969] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:38.633] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:42.607] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:43.241] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:44.651] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:45.310] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:46.497] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:47.194] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:51.279] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:51.996] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:55.463] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:56.121] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:40:57.218] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:40:57.920] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:41:01.374] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:41:02.010] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:41:06.770] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:41:07.445] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:41:12.095] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:41:12.746] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:41:23.067] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:41:23.733] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:41:27.693] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:41:28.348] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:41:29.565] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:41:30.262] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:41:35.963] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:41:36.817] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:41:41.009] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:41:41.741] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:42:03.389] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:42:04.078] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:42:13.330] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:42:14.411] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:42:15.092] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:42:17.526] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:42:18.169] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:42:24.597] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:42:25.261] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:42:50.968] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:42:52.092] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:42:56.775] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:42:57.431] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:43:05.877] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:43:06.529] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:43:18.033] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:43:18.700] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:43:26.968] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:43:27.604] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:43:37.357] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:43:37.996] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:43:41.206] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:43:41.863] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:43:50.836] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:43:51.512] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:43:54.926] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:43:55.585] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:04.494] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:05.152] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:08.790] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:09.455] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:11.031] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:11.683] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:23.949] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:24.626] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:27.174] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:27.899] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:31.523] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:32.257] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:36.269] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:36.939] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:37.999] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:38.690] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:41.912] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:42.552] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:44:45.505] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:44:46.203] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:57:05.822] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:57:06.854] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:58:27.899] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:58:28.915] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:59:35.566] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T11:59:36.354] [INFO] default - Conectado a MongoDB
+[2024-10-01T11:59:47.706] [INFO] default - Se obtuvieron todos los Usuarios correctamente
+[2024-10-01T11:59:59.147] [ERROR] default - Error en baja lógica del Usuario con ID: 66fa9147541b8bb91aa4d666: logger is not defined
+[2024-10-01T12:00:42.042] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:00:47.797] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:00:53.913] [INFO] default - El Usuario con ID: 66fa9147541b8bb91aa4d666 ha sido bloqueado correctamente
+[2024-10-01T12:00:53.916] [INFO] default - El Usuario con ID: 66fa9147541b8bb91aa4d666 fue bloqueado correctamente
+[2024-10-01T12:01:00.583] [INFO] default - El Usuario con ID: 66fa9147541b8bb91aa4d666 ha sido desbloqueado correctamente
+[2024-10-01T12:01:00.585] [INFO] default - El Usuario con ID: 66fa9147541b8bb91aa4d666 fue desbloqueado correctamente
+[2024-10-01T12:04:32.215] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:04:33.632] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:04:34.327] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:04:43.492] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:04:44.129] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:04:51.914] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:04:52.547] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:04:59.310] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:05:00.052] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:05:03.087] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:05:03.748] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:05:06.111] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:05:07.194] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:05:07.839] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:05:09.320] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:05:09.958] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:05:11.279] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:05:11.942] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:05:14.618] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:05:15.295] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:06:23.141] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:06:23.984] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:06:25.009] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:06:25.646] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:06:30.808] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:06:31.464] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:06:35.741] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:06:36.363] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:06:40.293] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:06:40.945] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:06:49.747] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:06:50.407] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:06:52.209] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:06:52.836] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:06:59.737] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:07:00.405] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:07:02.368] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:07:03.004] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:07:11.373] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:07:12.006] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:07:14.546] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:07:15.155] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:07:20.260] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:07:20.873] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:07:22.961] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:07:23.593] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:07:38.384] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:07:39.022] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:08:21.909] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:08:22.542] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:08:39.741] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:08:40.373] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:08:47.606] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:08:48.265] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:08:52.765] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:08:53.416] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:08:58.341] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:08:58.956] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:09:21.094] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:09:21.768] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:09:33.777] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:09:34.376] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:09:41.864] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:09:42.514] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:10:00.167] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:10:00.784] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:10:03.707] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:10:04.357] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:10:38.616] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:10:39.264] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:10:40.378] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:10:41.008] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:10:45.364] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:10:46.137] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:10:47.157] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:10:47.811] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:10:58.797] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:10:59.445] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:11:16.240] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:11:16.911] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:11:20.901] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:11:21.542] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:11:24.704] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:11:25.361] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:11:27.948] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:11:28.604] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:11:30.490] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:11:31.114] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:11:34.684] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:11:35.351] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:11:54.649] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:11:55.399] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:12:15.213] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:12:15.865] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:12:22.164] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:12:22.824] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:12:26.249] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:12:26.895] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:12:28.050] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:12:28.702] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:12:36.781] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:12:37.433] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:12:39.653] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:12:40.309] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:12:54.890] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:12:55.586] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:13:39.865] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:13:40.488] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:13:46.173] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:13:46.884] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:13:48.452] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:13:49.119] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:13:56.337] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:13:57.035] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:14:07.515] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:14:08.155] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:14:14.527] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:14:15.179] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:14:22.353] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:14:23.066] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:14:30.660] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:14:31.297] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:15:02.313] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:15:03.071] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:15:06.447] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:15:07.123] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:15:08.803] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:15:09.469] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:15:25.207] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:15:25.813] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:15:31.197] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:15:31.910] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:15:34.452] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:15:35.076] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:15:43.844] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:15:44.468] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:15:48.648] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:15:49.278] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:21:26.345] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:21:27.134] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:21:45.067] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:21:45.735] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:22:09.086] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:22:09.732] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:22:14.793] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:22:15.473] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:22:21.384] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:22:22.020] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:22:32.741] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:22:33.717] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:23:24.270] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:23:24.937] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:23:28.149] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:23:28.760] [INFO] default - Conectado a MongoDB
+[2024-10-01T12:25:36.975] [INFO] default - Servidor escuchando en el puerto 3001
+[2024-10-01T12:25:37.724] [INFO] default - Conectado a MongoDB

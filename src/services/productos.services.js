@@ -1,17 +1,18 @@
 const { cloudinary } = require("../helpers/cloudinary");
-const BookModel = require("../models/book.schema");
 const ProductModel = require("../models/book.schema");
+const logger = require("../../log4js-config");
 
 const nuevoProducto = async (body) => {
   try {
     const product = new ProductModel(body);
     await product.save();
+    logger.info(`Nuevo producto guardado: ${JSON.stringify(body)}`);
     return {
       msg: "Producto creado con éxito",
       statusCode: 201,
     };
   } catch (error) {
-    console.error("Error en nuevoProducto:", error);
+    logger.error(`Error en nuevoProducto: ${error.message}`);
     return {
       msg: "Error al crear el producto",
       statusCode: 500,
@@ -22,13 +23,14 @@ const nuevoProducto = async (body) => {
 
 const todoLosProductos = async (body) => {
   try {
-    const libros = await BookModel.find();
+    const libros = await ProductModel.find();
+    logger.info("Se han traído todos los libros");
     return {
       libros,
       statusCode: 200,
     };
   } catch (error) {
-    console.log(error);
+    logger.error("Error al obtener los libros:", error);
     return res.status(500).json({ msg: "Error interno del servidor" });
   }
 };
@@ -37,18 +39,22 @@ const unProducto = async (idProducto) => {
     const producto = await ProductModel.findById(idProducto);
 
     if (producto) {
+      logger.info(`Producto encontrado: ${idProducto}`);
+
       return {
         producto,
         statusCode: 200,
       };
     } else {
+      logger.warn(`Producto no encontrado: ${idProducto}`);
+
       return {
         statusCode: 404,
         msg: "Producto no encontrado",
       };
     }
   } catch (error) {
-    console.log(error);
+    logger.error(`Error en unProducto: ${error.message}`);
     return {
       msg: "Error en el servidor",
       statusCode: 500,
@@ -59,10 +65,11 @@ const unProducto = async (idProducto) => {
 
 const editarProducto = async (idProducto, body) => {
   try {
-    console.log("ID del producto recibido:", idProducto); // Log para verificar el ID recibido
 
     const producto = await ProductModel.findById(idProducto);
     if (!producto) {
+      logger.warn(`Producto no encontrado: ${idProducto}`);
+
       return {
         msg: "Producto no encontrado",
         statusCode: 404,
@@ -74,6 +81,7 @@ const editarProducto = async (idProducto, body) => {
       body,
       { new: true }
     );
+    logger.info(`Producto actualizado: ${idProducto}`);
 
     return {
       msg: "Producto actualizado con éxito",
@@ -81,7 +89,7 @@ const editarProducto = async (idProducto, body) => {
       statusCode: 200,
     };
   } catch (error) {
-    console.error("Error en el servidor:", error);
+    logger.error(`Error en editarProducto: ${error.message}`);
     return {
       msg: "Error en el servidor",
       statusCode: 500,
@@ -95,28 +103,36 @@ const eliminarProducto = async (idProducto) => {
     const result = await ProductModel.findById(idProducto);
     if (result) {
       await ProductModel.findByIdAndDelete({ _id: idProducto });
+      logger.info(`Producto eliminado: ${idProducto}`);
+
       return {
         msg: "Producto eliminado",
         statusCode: 200,
       };
     } else {
+      logger.warn(`Producto no existe: ${idProducto}`);
+
       return {
         msg: "Producto no existe",
         statusCode: 400,
       };
     }
-  } catch (error) { console.error("Error en el servidor:", error);
+  } catch (error) {
+    logger.error(`Error en eliminarProducto: ${error.message}`);
     return {
       msg: "Error en el servidor",
       statusCode: 500,
       error,
-    };}
+    };
+  }
 };
 
 const imagenProducto = async (idProducto, file) => {
   try {
     const product = await ProductModel.findById({ _id: idProducto });
     if (!product) {
+      logger.warn(`Producto no encontrado: ${idProducto}`);
+
       return {
         msg: "Producto no encontrado",
         statusCode: 404,
@@ -124,13 +140,15 @@ const imagenProducto = async (idProducto, file) => {
     }
     const imagen = await cloudinary.uploader.upload(file.path);
     product.imagen = imagen.url;
+    logger.info(`Imagen guardada para el producto: ${idProducto}`);
+
     await product.save();
     return {
       msg: "Imagen guardada con éxito",
       statusCode: 200,
     };
   } catch (error) {
-    console.error("Error en imagenProducto:", error);
+    logger.error(`Error en imagenProducto: ${error.message}`);
     return {
       msg: "Error interno en el servidor",
       statusCode: 500,
@@ -145,5 +163,5 @@ module.exports = {
   unProducto,
   editarProducto,
   eliminarProducto,
-  imagenProducto
+  imagenProducto,
 };
