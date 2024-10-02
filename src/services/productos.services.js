@@ -157,6 +157,56 @@ const imagenProducto = async (idProducto, file) => {
   }
 };
 
+const agregarProductoCarrito = async (idProducto, idUsuario) => {
+  try {
+    const producto = await ProductosModel.findById(idProducto)
+    const usuario = await UsuarioModel.findById(idUsuario)
+
+    const productoExiste = usuario.carrito.find((prod) => prod.id === idProducto)
+
+    if (productoExiste) {
+      return {
+        mag: 'Producto ya existe en el Carrito',
+        statusCode: 400
+      }
+    }
+
+    usuario.carrito.push(producto)
+    await usuario.save()
+
+    return {
+      msg: 'Producto agregado al carrito',
+      statusCode: 200
+    }
+  } catch (error) {
+    return {
+      statusCode: 500,
+      msg: 'Error al agregar el producto al carrito'
+    }
+  }
+}
+
+const borrarProductoCarrito = async (idProducto, idUsuario) => {
+  try {
+    const usuario = await UsuarioModel.findById(idUsuario)
+
+    const posicionProducto = usuario.carrito.findIndex((prod) => prod.id === idProducto)
+
+    usuario.carrito.splice(posicionProducto, 1)
+    await usuario.save()
+
+    return {
+      msg: 'Producto borrdado del Carrito',
+      statusCode: 200
+    }
+  } catch (error) {
+    return {
+      statusCode: 500,
+      msg: 'Error al borrar el producto del carrito'
+    }
+  }
+}
+
 module.exports = {
   nuevoProducto,
   todoLosProductos,
@@ -164,4 +214,6 @@ module.exports = {
   editarProducto,
   eliminarProducto,
   imagenProducto,
+  agregarProductoCarrito,
+  borrarProductoCarrito
 };
