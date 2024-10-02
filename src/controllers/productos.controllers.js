@@ -46,20 +46,7 @@ const traerUnProducto = async (req, res) => {
       return res.status(500).json({ msg: "Error interno del servidor" });
     }
   };
-/* 
-const actualizarUnProducto = (req, res) => {
-  const id = req.params.idProductos;
-  const positionProduct = productos.findIndex((prod) => prod.id === id);
 
-  const productoActualizado = {
-    id,
-    ...req.body,
-  };
-  productos[positionProduct] = productoActualizado;
-
-  res.json({ msg: "producto actualizado" });
-};
- */
 const actualizarUnProducto = async (req, res) => {
     try {
       const result = await serviciosDeProductos.editarProducto(req.params.idProducto, req.body);
@@ -79,14 +66,7 @@ const actualizarUnProducto = async (req, res) => {
       return res.status(500).json({ msg: "Error interno del servidor" });
     }
   };
-/* const eliminarUnProducto = (req, res) => {
-  const id = req.params.idProducto;
-  const positionProduct = productos.findIndex((prod) => prod.id === id);
 
-  productos.splice(positionProduct, 1);
-
-  res.json({ msg: "producto eliminado" });
-}; */
 const eliminarUnProducto=async(req,res)=>{
     try {
         const result = await serviciosDeProductos.eliminarProducto(req.params.idProducto);
@@ -138,7 +118,6 @@ const agregarProductoAlCarrito = async (req, res) => {
     res.status(500).json({msg: result.msg})
    }
 }
-
 
 const borrarProductoDelCarrito = async (req, res) => {
   const result =  await serviciosDeProductos.borrarProductoCarrito(req.params.idProducto, req.idUsuario)

@@ -176,7 +176,7 @@ const bajaUsuarioLogica = async (idUsuario) => {
   } catch (error) {
     logger.error(
       `Error al realizar la baja lógica para el Usuario con ID: ${idUsuario}: ${error.message}`
-    ); // Log de error en caso de excepción
+    ); 
     return {
       statusCode: 500,
       msg: "Error interno del servidor",
