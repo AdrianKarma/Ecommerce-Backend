@@ -1,6 +1,7 @@
 const { cloudinary } = require("../helpers/cloudinary");
 const ProductModel = require("../models/book.schema");
 const logger = require("../../log4js-config");
+const { MercadoPagoConfig, Preference } = require('mercadopago')
 
 const nuevoProducto = async (body) => {
   try {
@@ -207,6 +208,41 @@ const borrarProductoCarrito = async (idProducto, idUsuario) => {
   }
 }
 
+const pagoConMP = async (body) => {
+  const client = new MercadoPagoConfig({accessToken: process.env.MP_ACCESS_TOKEN})
+  const preference = new Preference(client)
+  const result = await preference.create({
+    body: {
+      items:[
+        {
+          title:'Libro 1',
+          quantity: 1,
+          unit_price: 15000,
+          currency_id:'ARS'
+        },
+        {
+          title:'libro 2',
+          quantity: 1,
+          unit_price: 170000,
+          currency_id:'ARS'
+        },
+      ],
+      back_urls: {
+        success:'myApp.netlify.com/carrito/success', //pagina de frontEnd
+        failure:'myApp.netlify.com/carrito/failure', //pagina de frontEnd
+        pending:'myApp.netlify.com/carrito/pending' //pagina de frontEnd   
+      },
+      auto_return: 'approved'
+    }
+  })
+
+  return {
+    result,
+    statusCode: 200
+  }
+  
+}
+
 module.exports = {
   nuevoProducto,
   todoLosProductos,
@@ -215,5 +251,6 @@ module.exports = {
   eliminarProducto,
   imagenProducto,
   agregarProductoCarrito,
-  borrarProductoCarrito
+  borrarProductoCarrito,
+  pagoConMP
 };

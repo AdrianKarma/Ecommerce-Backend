@@ -145,7 +145,17 @@ const borrarProductoDelCarrito = async (req, res) => {
     res.status(500).json({msg: result.msg})
    }
 }
+const mercadoPago = async (req, res) => {
+  try {
 
+    const resultMp = await serviciosDeProductos.pagoConMP(req.body)
+    if(resultMp.statusCode === 200){
+      res.status(200).json(resultMp.result.init_point)
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 module.exports = {
   crearProducto,
@@ -155,6 +165,7 @@ module.exports = {
   eliminarUnProducto,
   agregarImagenProducto,
   agregarProductoAlCarrito,
-  borrarProductoDelCarrito
+  borrarProductoDelCarrito,
+  mercadoPago
 
 };
