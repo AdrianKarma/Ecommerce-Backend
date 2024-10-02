@@ -1,4 +1,5 @@
 const serviceUsuario = require('../services/usuarios.services');
+const jwt = require('jsonwebtoken');
 
 const registrarUsuario = (req, res) => {
     try {
