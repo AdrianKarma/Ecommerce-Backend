@@ -213,6 +213,7 @@ const pagoConMP = async (body) => {
   const preference = new Preference(client)
   const result = await preference.create({
     body: {
+      //Dado que no hay un frontend que envie los productos, los items están hardcodeados temporalmente.
       items:[
         {
           title:'Libro 1',
