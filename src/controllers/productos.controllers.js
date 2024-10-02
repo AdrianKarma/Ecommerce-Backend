@@ -130,8 +130,11 @@ const agregarImagenProducto = async (req, res) => {
 const agregarProductoAlCarrito = async (req, res) => {
   const result =  await serviciosDeProductos.agregarProductoCarrito(req.params.idProducto, req.idUsuario)
   if(result.statusCode === 200){
+    logger.info('Producto agregado al carrito correctamente')
     res.status(200).json({msg: result.msg})
    }else{
+    logger.error(`Error en agregar Producto Al Carrito`);
+
     res.status(500).json({msg: result.msg})
    }
 }
@@ -140,8 +143,12 @@ const agregarProductoAlCarrito = async (req, res) => {
 const borrarProductoDelCarrito = async (req, res) => {
   const result =  await serviciosDeProductos.borrarProductoCarrito(req.params.idProducto, req.idUsuario)
   if(result.statusCode === 200){
+    logger.info('Producto eliminado del carrito correctamente')
+
     res.status(200).json({msg: result.msg})
    }else{
+    logger.error(`Error al eliminar producto del carrito`);
+
     res.status(500).json({msg: result.msg})
    }
 }
@@ -150,10 +157,11 @@ const mercadoPago = async (req, res) => {
 
     const resultMp = await serviciosDeProductos.pagoConMP(req.body)
     if(resultMp.statusCode === 200){
+      logger.info('Pagó realizado con éxito - MERCADO PAGO')
       res.status(200).json(resultMp.result.init_point)
     }
   } catch (error) {
-    console.log(error)
+    logger.error(`Error al pagar con mercado pago`);
   }
 }
 
