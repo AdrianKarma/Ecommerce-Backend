@@ -1,6 +1,5 @@
-const express = require('express')
-const app = express()
+require('dotenv').config()
+const Server = require('./server/config')
+const server = new Server()
 
-app.listen(3001, () => {
-    console.log('servidor back', 3001);
-})
+server.listen()
