@@ -1,4 +1,5 @@
-const serviceUsuario = require("../services/usuarios.services");
+const serviceUsuario = require('../services/usuarios.services');
+const jwt = require('jsonwebtoken');
 const logger = require("../../log4js-config");
 
 const registrarUsuario = async (req, res) => {
@@ -31,7 +32,7 @@ const iniciarSesionUsuario = async (req, res) => {
     } else {
       logger.info(`Se inició sesión correctamente`);
 
-      res.status(200).json({ msg: result.msg });
+      res.status(200).json({ msg: result.msg, token: result.token });
 
     }
   } catch (error) {

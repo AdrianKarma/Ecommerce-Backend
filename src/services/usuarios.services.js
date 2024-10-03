@@ -1,7 +1,10 @@
-const crypto = require("crypto");
+const crypto = require('crypto');
+const { registroUsuario } = require('../helpers/mensajes');
+
 const UserModel = require("../models/user.schema");
 const bcrypt = require("bcrypt");
 const logger = require("../../log4js-config");
+const jwt = require('jsonwebtoken');
 
 const nuevoUsuario = async (body) => {
   try {
@@ -19,10 +22,11 @@ const nuevoUsuario = async (body) => {
     }
     const salt = await bcrypt.genSalt();
     body.contrasenia = await bcrypt.hash(body.contrasenia, salt);
-    
+
 
     const usuario = new UserModel(body);
-    await usuario.save();
+    await registroUsuario(body.nombreUsuario, body.emailUsuario);
+        await usuario.save();
     logger.info(`Usuario registrado con éxito`);
 
     return {
@@ -56,11 +60,21 @@ const inicioSesion = async (body) => {
     );
 
     if (verificarContrasenia) {
+
+      const payload = {
+        _id: usuarioExiste._id,
+        rol: usuarioExiste.rol,
+        bloqueado: usuarioExiste.bloqueado
+      }
+
+      const token = jwt.sign(payload, process.env.JWT_SECRET)
+
       logger.info(`Inicio de sesión con éxito`);
 
       return {
         msg: "Inicio de sesión con éxito",
         statusCode: 201,
+        token
       };
     } else {
       logger.warn(`Inicio de sesión incorrecto`);
@@ -85,9 +99,9 @@ const obtenerTodosLosUsuarios = async (body) => {
       usuarios,
       statusCode: 200,
     };
-  }  catch (error) {
+  } catch (error) {
     logger.error(`Error al obtener los Usuarios: ${error.message}`);
-    return { statusCode: 500, msg: "Error interno del servidor", error }; 
+    return { statusCode: 500, msg: "Error interno del servidor", error };
   }
 };
 
