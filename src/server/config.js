@@ -16,7 +16,7 @@ class Server {
 
         middleware(){
             this.app.use(express.json())
-            this.app.use(express.static(path.join(__dirname, 'src/public')))
+            this.app.use(express.static(path.join(__dirname, 'public')))
             this.app.use(cors())
             this.app.use(morgan('dev'))
         }
