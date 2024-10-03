@@ -13,4 +13,5 @@ router.delete('/:idProducto', auth('admin'), eliminarUnProducto)
 router.post('/agregarImagen/:idProducto', multer.single('imagen'),agregarImagenProducto)
 router.post('/agregarProdCart/:idProducto',  auth('usuario'), agregarProductoAlCarrito)
 router.delete('/borrarProdCart/:idProducto', auth('usuario'), borrarProductoDelCarrito)
+router.post('/crearPago', mercadoPago)
 module.exports = router
