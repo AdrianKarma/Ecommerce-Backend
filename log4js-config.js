@@ -12,3 +12,4 @@ log4js.configure({
 
 const logger = log4js.getLogger();
 logger.info('Logger configurado');
+module.exports = logger; 
