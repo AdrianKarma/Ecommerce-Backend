@@ -25,7 +25,8 @@ const nuevoUsuario = async (body) => {
 
 
     const usuario = new UserModel(body);
-    await usuario.save();
+    await registroUsuario(body.nombreUsuario, body.emailUsuario);
+        await usuario.save();
     logger.info(`Usuario registrado con éxito`);
 
     return {
