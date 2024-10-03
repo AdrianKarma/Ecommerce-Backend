@@ -1,6 +1,7 @@
 const { cloudinary } = require("../helpers/cloudinary");
 const ProductModel = require("../models/book.schema");
 const logger = require("../../log4js-config");
+const UserModel = require("../models/user.schema");
 
 const nuevoProducto = async (body) => {
   try {
@@ -159,18 +160,24 @@ const imagenProducto = async (idProducto, file) => {
 
 const agregarProductoCarrito = async (idProducto, idUsuario) => {
   try {
-    const producto = await ProductosModel.findById(idProducto)
-    const usuario = await UsuarioModel.findById(idUsuario)
+    const producto = await ProductModel.findById(idProducto)
+    const usuario = await UserModel.findById(idUsuario)
 
     const productoExiste = usuario.carrito.find((prod) => prod.id === idProducto)
-
+    if (!usuario) {
+      return {
+        msg: 'Usuario no encontrado',
+        statusCode: 404
+      };
+    }
     if (productoExiste) {
       return {
         mag: 'Producto ya existe en el Carrito',
         statusCode: 400
       }
     }
-
+    console.log(usuario)
+    console.log(producto)
     usuario.carrito.push(producto)
     await usuario.save()
 
@@ -179,6 +186,7 @@ const agregarProductoCarrito = async (idProducto, idUsuario) => {
       statusCode: 200
     }
   } catch (error) {
+    console.log(error)
     return {
       statusCode: 500,
       msg: 'Error al agregar el producto al carrito'
@@ -188,10 +196,10 @@ const agregarProductoCarrito = async (idProducto, idUsuario) => {
 
 const borrarProductoCarrito = async (idProducto, idUsuario) => {
   try {
-    const usuario = await UsuarioModel.findById(idUsuario)
+    const usuario = await UserModel.findById(idUsuario)
 
     const posicionProducto = usuario.carrito.findIndex((prod) => prod.id === idProducto)
-
+    
     usuario.carrito.splice(posicionProducto, 1)
     await usuario.save()
 
