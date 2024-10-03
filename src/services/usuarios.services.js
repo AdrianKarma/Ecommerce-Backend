@@ -1,4 +1,6 @@
-const crypto = require("crypto");
+const crypto = require('crypto');
+const { registroUsuario } = require('../helpers/mensajes');
+
 const UserModel = require("../models/user.schema");
 const bcrypt = require("bcrypt");
 const logger = require("../../log4js-config");
@@ -23,7 +25,8 @@ const nuevoUsuario = async (body) => {
 
 
     const usuario = new UserModel(body);
-    await usuario.save();
+    await registroUsuario(body.nombreUsuario, body.emailUsuario);
+        await usuario.save();
     logger.info(`Usuario registrado con éxito`);
 
     return {
