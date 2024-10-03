@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-const crypto = require('crypto'); // Asegúrate de importar crypto si no lo has hecho
+const crypto = require('crypto');
 const { registroUsuario } = require('../helpers/mensajes');
-=======
-const crypto = require("crypto");
+
 const UserModel = require("../models/user.schema");
 const bcrypt = require("bcrypt");
 const logger = require("../../log4js-config");
 const jwt = require('jsonwebtoken');
->>>>>>> dev
 
 const nuevoUsuario = async (body) => {
   try {
@@ -27,17 +24,6 @@ const nuevoUsuario = async (body) => {
     body.contrasenia = await bcrypt.hash(body.contrasenia, salt);
 
 
-<<<<<<< HEAD
-        const id = crypto.randomUUID();
-        usuarios.push({ id, bloqueado: false, ...body });
-        return { status: 201, msg: 'Usuario creado exitosamente' }; 
-    } catch (error) {
-        console.log(error);
-        return { status: 500, msg: 'Error interno del servidor' }; 
-    }
-
-    registroUsuario()
-=======
     const usuario = new UserModel(body);
     await usuario.save();
     logger.info(`Usuario registrado con éxito`);
@@ -50,7 +36,6 @@ const nuevoUsuario = async (body) => {
     logger.error(`Error al crear Usuario: ${error.message}`);
     return { statusCode: 500, msg: "Error interno del servidor", error };
   }
->>>>>>> dev
 };
 
 const inicioSesion = async (body) => {

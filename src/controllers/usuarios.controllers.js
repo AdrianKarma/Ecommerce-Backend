@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 const serviceUsuario = require('../services/usuarios.services');
 const jwt = require('jsonwebtoken');
-=======
-const serviceUsuario = require("../services/usuarios.services");
 const logger = require("../../log4js-config");
->>>>>>> dev
 
 const registrarUsuario = async (req, res) => {
   try {
