@@ -7,9 +7,8 @@ module.exports = (rol) => (req, res, next) => {
         if(!token){
             return res.status(409).json({msg: 'Token incorrecto'})
         }
-
         const verify = jwt.verify(token, process.env.JWT_SECRET)
-
+        req.idUsuario = verify._id;
         if (rol === verify.rol) {
             return next()
         } else {

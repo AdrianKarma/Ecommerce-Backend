@@ -127,7 +127,7 @@ const agregarImagenProducto = async (req, res) => {
   }
 };
 
-const agregarProductoAlCarrito = async (req, res) => {
+ const agregarProductoAlCarrito = async (req, res) => {
   const result =  await serviciosDeProductos.agregarProductoCarrito(req.params.idProducto, req.idUsuario)
   if(result.statusCode === 200){
     res.status(200).json({msg: result.msg})
@@ -135,7 +135,7 @@ const agregarProductoAlCarrito = async (req, res) => {
     res.status(500).json({msg: result.msg})
    }
 }
-
+ 
 
 const borrarProductoDelCarrito = async (req, res) => {
   const result =  await serviciosDeProductos.borrarProductoCarrito(req.params.idProducto, req.idUsuario)

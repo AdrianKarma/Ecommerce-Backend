@@ -159,7 +159,7 @@ const imagenProducto = async (idProducto, file) => {
   }
 };
 
-const agregarProductoCarrito = async (idProducto, idUsuario) => {
+ const agregarProductoCarrito = async (idProducto, idUsuario) => {
   try {
     const producto = await ProductModel.findById(idProducto)
     const usuario = await UserModel.findById(idUsuario)
@@ -193,8 +193,8 @@ const agregarProductoCarrito = async (idProducto, idUsuario) => {
       msg: 'Error al agregar el producto al carrito'
     }
   }
-}
-
+} 
+ 
 const borrarProductoCarrito = async (idProducto, idUsuario) => {
   try {
     const usuario = await UserModel.findById(idUsuario)
