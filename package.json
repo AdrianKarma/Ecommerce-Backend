@@ -4,8 +4,8 @@
   "description": "Backend para el proyecto final del Curso de Backend 1 de Rollingcode",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
