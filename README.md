@@ -14,6 +14,20 @@ Además, incluye integración con servicios externos como MercadoPago para pagos
 
 ### 🌟 [Deploy del backend en Vercel con BD en Mongo Atlas](#)
 
+## Tecnologías aplicadas en este proyecto.
+- NodeJS
+
+## Base de Datos
+- MongoDB
+
+## Como clonar el repositorio
+En una terminal ejecuta el siguiente comando:
+
+```
+git clone https://github.com/AdrianKarma/Ecommerce-Backend.git
+
+```
+
 ## Instalación
 
 Antes de clonar el repositorio, asegúrate de instalar las dependencias:
