@@ -43,7 +43,12 @@ npm i
 - mongoose
 - morgan
 - nodemon
-- log4js 
+- log4js
+- cloudinary
+- mercadopago
+- multer
+- nodemailer
+- dotenv
 
 ### Autores
 - 👨‍💻 **Alejandro Sebastian Orozco**
